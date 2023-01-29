@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BasicFragment</string>
+    <string name="almond">Almond</string>
+    <string name="pear">Pear</string>
+    <string name="coral">Coral</string>
+    <string name="orchid">Orchid</string>
+    <string name="colour_picker">Colour Picker</string>
 </resources>
