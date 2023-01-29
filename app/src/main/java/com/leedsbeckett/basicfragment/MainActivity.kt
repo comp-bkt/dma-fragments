@@ -12,7 +12,9 @@ class MainActivity : AppCompatActivity() {
         val fm = supportFragmentManager
         if (fm.findFragmentById(R.id.container)==null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, FragmentOne.newInstance())
+                .replace(R.id.container,
+                    FragmentOne.newInstance(resources.getColor(R.color.almond, null),
+                                            "Almond Background"))
                 .commitNow()
         }
     }
