@@ -2,6 +2,7 @@ package com.leedsbeckett.basicfragment
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +19,7 @@ class ColourPickerFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+        Log.v(MainActivity.TAG, "ColourPickerFragment - onAttach")
         if (context is OnColourChoiceHandler) {
             listener = context
         } else {
@@ -29,6 +31,7 @@ class ColourPickerFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        Log.v(MainActivity.TAG, "ColourPickerFragment - onCreateView")
         val view = inflater.inflate(R.layout.fragment_colour_picker, container, false)
 
         val almondButton: Button = view.findViewById(R.id.almond_button)
@@ -53,4 +56,49 @@ class ColourPickerFragment : Fragment() {
         return view
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.v(MainActivity.TAG, "ColourPickerFragment - onCreate")
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Log.v(MainActivity.TAG, "ColourPickerFragment - onViewCreated")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.v(MainActivity.TAG, "ColourPickerFragment - onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.v(MainActivity.TAG, "ColourPickerFragment - onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.v(MainActivity.TAG, "ColourPickerFragment - onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.v(MainActivity.TAG, "ColourPickerFragment - onStop")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.v(MainActivity.TAG, "ColourPickerFragment - onDestroyView")
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.v(MainActivity.TAG, "ColourPickerFragment - onDestroy")
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        Log.v(MainActivity.TAG, "ColourPickerFragment - onDetach")
+    }
 }

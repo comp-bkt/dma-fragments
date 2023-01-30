@@ -2,6 +2,7 @@ package com.leedsbeckett.basicfragment
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -38,6 +39,7 @@ class ColourDisplayFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+        Log.v(MainActivity.TAG, "ColourDisplayFragment - onAttach")
         if (context is OnColourChoiceHandler) {
             listener = context
         } else {
@@ -49,6 +51,7 @@ class ColourDisplayFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        Log.v(MainActivity.TAG, "ColourDisplayFragment - onCreateView")
         val view = inflater.inflate(R.layout.fragment_colour_display, container, false)
 
         bg = view.findViewById(R.id.main)
@@ -87,4 +90,49 @@ class ColourDisplayFragment : Fragment() {
         }
     }
 
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.v(MainActivity.TAG, "ColourDisplayFragment - onCreate")
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Log.v(MainActivity.TAG, "ColourDisplayFragment - onViewCreated")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.v(MainActivity.TAG, "ColourDisplayFragment - onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.v(MainActivity.TAG, "ColourDisplayFragment - onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.v(MainActivity.TAG, "ColourDisplayFragment - onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.v(MainActivity.TAG, "ColourDisplayFragment - onStop")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.v(MainActivity.TAG, "ColourDisplayFragment - onDestroyView")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.v(MainActivity.TAG, "ColourDisplayFragment - onDestroy")
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        Log.v(MainActivity.TAG, "ColourDisplayFragment - onDetach")
+    }
 }
